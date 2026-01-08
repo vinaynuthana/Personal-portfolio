@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Nuthanakalva Vinay — Portfolio</title>
+<meta name="description" content="Portfolio of Nuthanakalva Vinay, a final-year Computer Science student specializing in software development. Showcasing skills, projects, and achievements."/>
+<meta name="keywords" content="Nuthanakalva Vinay, portfolio, data science, machine learning, AI, CSE, projects, resume, blog"/>
+<meta property="og:title" content="Nuthanakalva Vinay — Portfolio"/>
+<meta property="og:description" content="Personal portfolio website of Nuthanakalva Vinay, featuring projects in full-stack development."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content=""/>
+<meta property="og:image" content=""/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Nuthanakalva Vinay — Portfolio"/>
+<meta name="twitter:description" content="Portfolio of Nuthanakalva Vinay, final-year CS student. Explore projects, skills, and blog posts."/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--primary-color:#3AAFA9;--secondary-color:#E7C6A0;--accent:#8FD694;--dark-bg:#F1FAF8;--light-bg:#FFFFFF;--text-primary:#2F3E46;--text-secondary:#5C6B73;--card-bg:rgba(255,255,255,0.85);--primary-opaque:rgba(58,175,169,0.15);--secondary-opaque:rgba(231,198,160,0.12);--accent-opaque:rgba(143,214,148,0.12);--card-border:rgba(47,62,70,0.06);}
+html{scroll-behavior:smooth;}
+body{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial; background:linear-gradient(135deg,var(--dark-bg) 0%,var(--light-bg) 100%); color:var(--text-primary); line-height:1.6; overflow-x:hidden; -webkit-font-smoothing:antialiased;}
+nav{position:fixed;top:0;left:0;right:0;z-index:1200; padding:0.9rem 0; background:rgba(255,255,255,0.7); backdrop-filter:blur(8px); transition:box-shadow .25s ease, background .25s ease;}
+nav.scrolled{box-shadow:0 6px 20px rgba(0,0,0,0.06); background:rgba(255,255,255,0.95);}
+.nav-container{max-width:1200px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;}
+.logo{font-weight:700; font-size:1.2rem; letter-spacing:0.5px; background:linear-gradient(135deg,var(--accent),var(--secondary-color)); -webkit-background-clip:text; -webkit-text-fill-color:transparent;}
+.nav-links{display:flex;gap:1.5rem; list-style:none;}
+.nav-links a{text-decoration:none;color:var(--text-secondary); font-weight:500; transition:color .18s ease, transform .18s ease;}
+.nav-links a:hover{color:var(--primary-color); transform:translateY(-2px);}
+/* Animated underline for nav links */
+.nav-links a {
+  position: relative;
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-weight: 500;
+  padding-bottom: 4px;         /* space for the underline */
+  transition: color .18s ease;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--primary-color);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.mobile-menu{display:none;cursor:pointer;}
+.mobile-menu span{display:block;width:24px;height:3px;margin:4px 0;border-radius:3px;background:var(--text-primary);transition:.2s;}
+.container{max-width:1200px;margin:0 auto;padding:0 1.5rem;}
+section{padding:5rem 0; opacity:1;}
+@keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-18px);}}
+h1{font-size:2.6rem;margin-bottom:1rem;line-height:1.05; background:linear-gradient(135deg,var(--text-primary),var(--accent)); -webkit-background-clip:text; -webkit-text-fill-color:transparent;}
+h2{font-size:2rem;margin-bottom:1.2rem;text-align:center; background:linear-gradient(135deg,var(--accent),var(--secondary-color)); -webkit-background-clip:text; -webkit-text-fill-color:transparent;}
+h3{color:var(--primary-color);font-size:1.1rem;margin-bottom:.6rem;}
+#home{min-height:100vh;display:flex;align-items:center;padding-top:94px;}
+.hero-content{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;}
+.hero-text .intro-text{color:var(--text-secondary);margin-top:1rem;font-size:1.05rem;line-height:1.8;}
+.cta-buttons{display:flex;gap:1rem;margin-top:1.5rem;flex-wrap:wrap;}
+.btn{padding:.75rem 1.6rem;border-radius:999px;font-weight:600;text-decoration:none;display:inline-block;border:none;cursor:pointer;}
+.btn-primary{background:linear-gradient(135deg,var(--primary-color),var(--accent));color:#fff;box-shadow:0 8px 22px rgba(58,175,169,0.12);}
+.btn-primary:hover{transform:translateY(-3px);}
+.btn-secondary{background:transparent;color:var(--primary-color);border:2px solid var(--primary-color);}
+.btn-secondary:hover{background:var(--primary-color);color:var(--light-bg);}
+.hero-image{display:flex;justify-content:center;}
+.profile-img{width:300px;height:300px;border-radius:50%;background:linear-gradient(135deg,var(--primary-color),var(--secondary-color));padding:6px;animation:float 4s ease-in-out infinite;display:flex;align-items:center;justify-content:center;}
+.profile-img img{width:100%;height:100%;object-fit:cover;border-radius:50%;background:var(--light-bg);}
+.placeholder-avatar{width:100%;height:100%;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--light-bg);color:var(--text-secondary);font-size:4rem;}
+.about-content p{margin-bottom:1rem;line-height:1.6;}
+.education-card{background:var(--card-bg);border-left:4px solid var(--accent);padding:1.2rem;}
+.education-meta{font-weight:500;color:var(--text-secondary);}
+.education-dates{margin-top:.5rem;color:var(--text-secondary);}
+.coursework-grid{display:grid;gap:.8rem;margin-top:.6rem;}
+.course-item{background:var(--card-bg);padding:.6rem .9rem;border-radius:4px;font-size:.95rem;text-align:center;border:1px solid rgba(47,62,70,0.04);}
+.project-card{position:relative;overflow:hidden;background:var(--card-bg);border-left:4px solid var(--accent);margin-bottom:1.5rem;padding:1rem;transition:transform .25s ease,box-shadow .25s ease;}
+.project-card::before{content:'';position:absolute;left:0;top:0;width:100%;height:4px;background:var(--primary-color);transform:scaleX(0);transform-origin:left;transition:transform .3s ease;}
+.project-card:hover::before{transform:scaleX(1);}
+.project-card:hover{transform:translateY(-8px);box-shadow:0 18px 40px rgba(47,62,70,0.06);}
+.tech-stack{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.6rem;}
+.tech-tag{padding:.3rem .7rem;background:var(--primary-opaque);border-radius:4px;font-size:.85rem;font-weight:500;border:1px solid var(--primary-color);color:var(--text-primary);}
+.skills-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin-top:1rem;}
+.skill-items{display:flex;flex-wrap:wrap;gap:.6rem;}
+.skill-item{padding:.4rem .9rem;border-radius:25px;font-size:.9rem;background:linear-gradient(135deg,var(--primary-opaque),var(--secondary-opaque));border:1px solid rgba(0,0,0,0.03);color:var(--text-primary);transition:transform .18s ease;}
+.skill-item:hover{transform:scale(1.05);}
+.achievements-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;margin-top:1rem;}
+.achievement-card{background:var(--card-bg);border-left:4px solid var(--accent);padding:1rem;transition:transform .25s ease,background .3s ease;}
+.achievement-card:hover{transform:translateX(6px);border-left-color:var(--primary-color);background:var(--accent-opaque);}
+.contact-content{text-align:center;max-width:700px;margin:0 auto;}
+.contact-links{display:flex;justify-content:center;gap:1.2rem;margin-top:1rem;flex-wrap:wrap;}
+.contact-item{text-decoration:none;color:var(--text-secondary);display:flex;flex-direction:column;align-items:center;gap:.5rem;transition:transform .18s ease,color .18s ease;}
+.contact-item:hover{transform:translateY(-6px);color:var(--primary-color);}
+.contact-icon{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--card-bg);border:1px solid rgba(47,62,70,0.04);font-size:1.2rem;color:var(--text-primary);}
+.blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1rem;margin-top:1rem;}
+.blog-post{background:var(--card-bg);border-left:4px solid var(--accent);padding:1rem;transition:transform .3s ease,box-shadow .3s ease;}
+.blog-post:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,0.06);}
+.blog-post h3{margin-bottom:0.5rem;}
+.post-date{font-size:.9rem;color:var(--text-secondary);margin-bottom:.8rem;}
+footer{text-align:center;padding:2rem 0;border-top:1px solid rgba(47,62,70,0.04);color:var(--text-secondary);margin-top:2rem;}
+#themeToggle{cursor:pointer;width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:var(--card-bg);border:1px solid rgba(47,62,70,0.04);}
+#themeToggle:hover{transform:rotate(20deg);}
+#themeIcon{color:var(--text-primary);font-size:1.2rem;}
+body[data-theme="dark"]{--primary-color:#8FD694;--secondary-color:#3AAFA9;--accent:#E7C6A0;--dark-bg:#202124;--light-bg:#303134;--text-primary:#E0E0E0;--text-secondary:#A0A0A0;--card-bg:rgba(40,44,52,0.85);--card-border:rgba(255,255,255,0.1);--primary-opaque:rgba(143,214,148,0.15);--secondary-opaque:rgba(58,175,169,0.12);--accent-opaque:rgba(231,198,160,0.12);}
+body[data-theme="dark"] nav{background:rgba(32,33,36,0.7);}
+body[data-theme="dark"] nav.scrolled{background:rgba(32,33,36,0.95);}
+@media (max-width:880px){.hero-content{grid-template-columns:1fr;text-align:center;gap:2rem;}.hero-image{order:-1;}.profile-img{width:200px;height:200px;}}
+@media (max-width:760px){.nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:var(--card-bg);flex-direction:column;padding:1rem;gap:1rem;}.nav-links a{color:var(--text-primary);}.nav-links.active{display:flex;}.mobile-menu{display:block;}}
+</style>
+</head>
+<body>
+<nav id="navbar">
+    <div class="nav-container">
+        <div class="logo">Nuthanakalva Vinay</div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#achievements">Achievements</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div id="themeToggle" aria-label="Toggle dark mode"><i id="themeIcon" class="fas fa-moon"></i></div>
+        <div class="mobile-menu" id="mobileMenu" aria-label="Toggle navigation"><span></span><span></span><span></span></div>
+    </div>
+</nav>
+<section id="home">
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Hi, I'm Vinay</h1>
+                <p class="intro-text">A passionate final-year B.Tech Computer Science student at Mohan Babu University with a deep curiosity for technology and problem-solving. I specialize in programming and Full-Stack Developer who loves building real-world applications using Java, Spring Boot, and modern web technologies.</p>
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                    <a href="https://drive.google.com/file/d/1_M7RO4cMeUNbfuQrGALnvYOQr0jlWeC7/view?usp=sharing" class="btn btn-secondary" download id="downloadResume">Download Resume</a>
+                </div>
+            </div>
+            <div class="hero-image">
+    <div class="profile-img" aria-hidden="true">
+        <img src="https://lh3.googleusercontent.com/u/0/d/15D5nnQjLVSzhOTLJc6bPoLEypn48qFRa" alt="Nuthanakalva Vinay" style="width:100%; height:100%; object-fit:cover; border-radius:50%;">
+    </div>
+</div>
+        </div>
+    </div>
+</section>
+<section id="about">
+    <div class="container">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <p>I am a curious learner pursuing a B.Tech in Computer Science &amp; Engineering at Mohan Babu University. I combine academic rigor with hands-on projects and competitive programming.</p>
+            <p style="margin-top:1rem;">My interests include AI/ML and full-stack development. I completed a Java full-stack development internship at WIPRO TalentNext and enjoy building end-to-end solutions.</p>
+            <p style="margin-top:1rem;">Outside coding, I play chess and solve algorithmic problems on LeetCode and CodeChef.</p>
+        </div>
+    </div>
+</section>
+<section id="education">
+    <div class="container">
+        <h2>Education</h2>
+        <div class="education-grid">
+            <div class="education-card">
+                <h3 >B.Tech — Computer Science & Engineering</h3>
+                <p class="education-meta">Mohan Babu University, Tirupati</p>
+                <p class="education-dates">November 2022 — April 2026 (Expected)</p>
+                <p style="font-size:1.05rem;">CGPA: <strong style="color:var(--accent);">9.11</strong></p>
+                <h4 style="margin-top:1.2rem; margin-bottom:.6rem; color:var(--primary-color);">Relevant Coursework</h4>
+                <div class="coursework-grid">
+                    <div class="course-item">Design and Analysis of Algorithms</div>
+                    <div class="course-item">Data Structures</div>
+                    <div class="course-item">Database Management Systems</div>
+                    <div class="course-item">Object Oriented Modeling and Design</div>
+                    <div class="course-item">Theory of Computation</div>
+                    <div class="course-item">Web Technologies</div>
+                    <div class="course-item">Machine Learning</div>
+                    <div class="course-item">Operating Systems</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="projects">
+    <div class="container">
+        <h2>Projects &amp; Experience</h2>
+        <div style="margin-bottom:2rem;">
+            <h3 style="text-align:center; margin-bottom:1rem;">Professional Experience</h3>
+            <div class="project-card">
+                <h3>Java Full Stack Developer Virtual Internship (July 2025– OCT 2025)</h3>
+                <ul class="project-description">
+                    <li>Completed the Wipro TalentNext - Gaining hands-on skills in full-stack development and industry practices.</li>
+                    <li>Strengthened expertise in Java, backend development, and web technologies in Digital Skills Readiness Program.</li>
+                </ul>
+            </div>
+        </div>
+        <h3 style="text-align:center; margin-bottom:1rem;">Academic Projects</h3>
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3>Mood-Based Movie Recommender</h3>
+                <div class="tech-stack">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">NLP</span>
+                    <span class="tech-tag">TMDB Dataset</span>
+                    <span class="tech-tag">Streamlit</span>
+                </div>
+                <div class="project-description">
+                    <ul>
+                        <li>Built a movie recommender that suggests films based on the user's current mood using sentiment analysis and content features.</li>
+                        <li>Utilized TMDB metadata (genres, tags, summaries) for content-based filtering.</li>
+                        <li>Processed and mapped sentiment-driven categories (e.g., “comedy”, “inspirational drama”) to enhance recommendations.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="project-card">
+                <h3>Real-Time Weather App</h3>
+                <div class="tech-stack">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">OpenWeatherMap API</span>
+                    <span class="tech-tag">Streamlit</span>
+                </div>
+                <div class="project-description">
+                    <ul>
+                        <li>Developed a web app using Streamlit to display real-time weather data for user-searched cities.</li>
+                        <li>Integrated the OpenWeatherMap API to fetch current temperature, humidity, wind speed, and conditions.</li>
+                        <li>Built an interactive interface to present live weather insights in an accessible format.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="project-card">
+                <h3>Portfolio Website</h3>
+                <div class="tech-stack">
+                    <span class="tech-tag">HTML</span>
+                    <span class="tech-tag">CSS</span>
+                    <span class="tech-tag">JavaScript</span>
+                </div>
+                <div class="project-description">
+                    <ul>
+                        <li>Designed and developed a responsive personal portfolio website with smooth scrolling.</li>
+                        <li>Structured layout with semantic HTML and styled with clean, modern CSS.</li>
+                        <li>Ensured an accessible and mobile-friendly experience across devices.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="project-card">
+                <h3>YouTube Clone</h3>
+                <div class="tech-stack">
+                    <span class="tech-tag">HTML</span>
+                    <span class="tech-tag">CSS</span>
+                    <span class="tech-tag">JavaScript</span>
+                </div>
+                <div class="project-description">
+                    <ul>
+                        <li>Recreated essential UI components (navigation bar, video thumbnails, sidebar) of YouTube's homepage using semantic HTML and CSS (Flexbox/Grid).</li>
+                        <li>Styled the interface to closely match YouTube's design, including responsive scaling and hover effects.</li>
+                        <li>Added basic interactivity with JavaScript (e.g., menu toggles, dynamic thumbnail highlights).</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="skills">
+    <div class="container">
+        <h2>Technical Skills</h2>
+        <div class="skills-container">
+            <div class="skill-category">
+                <h3>Programming Languages</h3>
+                <div class="skill-items">
+                    <span class="skill-item">Java</span>
+                    <span class="skill-item">Python</span>
+                    <span class="skill-item">JavaScript</span>
+                    <span class="skill-item">C</span>
+                    <span class="skill-item">C++</span>
+                    <span class="skill-item">SQL</span>
+                    <span class="skill-item">HTML/CSS</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>Web & Frameworks</h3>
+                <div class="skill-items">
+                    <span class="skill-item">React</span>
+                    <span class="skill-item">Streamlit</span>
+                    <span class="skill-item">HTML5</span>
+                    <span class="skill-item">CSS3</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>Data Science & ML</h3>
+                <div class="skill-items">
+                    <span class="skill-item">Pandas</span>
+                    <span class="skill-item">NumPy</span>
+                    <span class="skill-item">Scikit-learn</span>
+                    <span class="skill-item">Matplotlib</span>
+                    <span class="skill-item">NLP</span>
+                    <span class="skill-item">Seaborn</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>Developer Tools</h3>
+                <div class="skill-items">
+                    <span class="skill-item">Git</span>
+                    <span class="skill-item">GitHub</span>
+                    <span class="skill-item">VS Code</span>
+                    <span class="skill-item">Jupyter</span>
+                    <span class="skill-item">IntelliJ IDEA</span>
+                    <span class="skill-item">Android Studio</span>
+                    <span class="skill-item">Google Cloud Platform</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="achievements">
+    <div class="container">
+        <h2>Achievements &amp; Certifications</h2>
+        <h3 style="margin-bottom:.8rem;">Achievements</h3>
+        <div class="achievements-grid">
+            <div class="achievement-card">
+                <h4>Competitive Programming Excellence</h4>
+                <p>Solved 100+ problems on platforms like LeetCode, CodeChef &amp; GfG.</p>
+            </div>
+            <div class="achievement-card">
+                <h4>Hackathon Success</h4>
+                <p>Top-10 finishes in inter-college hackathons.</p>
+            </div>
+            <div class="achievement-card">
+                <h4>Chess Championship</h4>
+                <p>Secured top positions in chess tournaments (Top-3 in college championship, 4th in a regional competition).</p>
+            </div>
+        </div>
+        <h3 style="margin-top:1.2rem; margin-bottom:.6rem;">Certifications</h3>
+        <div class="achievements-grid">
+            <div class="achievement-card"><h4>Machine Learning</h4><p>Altair</p></div>
+            <div class="achievement-card"><h4>Agile &amp; Scrum</h4><p>Coursera</p></div>
+            <div class="achievement-card"><h4>Data Analytics</h4><p>Coursera</p></div>
+            <div class="achievement-card"><h4>Hardware &amp; OS</h4><p>Coursera</p></div>
+            <div class="achievement-card"><h4>Mathematics for CS</h4><p>Coursera</p></div>
+        </div>
+    </div>
+</section>
+<section id="contact">
+    <div class="container">
+        <h2>Contact</h2>
+        <div class="contact-content">
+            <p style="color:var(--text-secondary);">Interested in collaborating or hiring? Reach out — I reply quickly.</p>
+            <div class="contact-links" style="margin-top:1rem;">
+                <a class="contact-item" href="mailto:vinaynuthana0910@gmail.com" aria-label="Email">
+                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                </a>
+                <a class="contact-item" href="tel:+919059465994" aria-label="Phone">
+                    <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                </a>
+                <a class="contact-item" href="https://github.com/vinaynuthana/" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <div class="contact-icon"><i class="fab fa-github"></i></div>
+                </a>
+                <a class="contact-item" href="https://www.linkedin.com/in/nuthanakalva-vinay-13409b351/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<footer>
+    <div class="container">
+        <p>© <span id="year"></span> Nuthanakalva Vinay — Made with Passion</p>
+    </div>
+</footer>
+<script>
+// fill current year
+document.getElementById('year').textContent = new Date().getFullYear();
+// mobile menu toggle
+const mobileMenu = document.getElementById('mobileMenu');
+const navLinks = document.getElementById('navLinks');
+mobileMenu.addEventListener('click', () => navLinks.classList.toggle('active'));
+// nav scroll effect
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 10) navbar.classList.add('scrolled');
+    else navbar.classList.remove('scrolled');
+});
+// Dark/Light mode toggle
+const themeToggle = document.getElementById('themeToggle');
+const themeIcon = document.getElementById('themeIcon');
+themeToggle.addEventListener('click', () => {
+    if (document.body.hasAttribute('data-theme')) {
+        document.body.removeAttribute('data-theme');
+        localStorage.setItem('theme','light');
+        themeIcon.classList.replace('fa-sun','fa-moon');
+    } else {
+        document.body.setAttribute('data-theme','dark');
+        localStorage.setItem('theme','dark');
+        themeIcon.classList.replace('fa-moon','fa-sun');
+    }
+});
+if (localStorage.getItem('theme') === 'dark') {
+    document.body.setAttribute('data-theme','dark');
+    themeIcon.classList.replace('fa-moon','fa-sun');
+}
+</script>
+</body>
+</html>

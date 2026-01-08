@@ -2,6 +2,11 @@
 
 Welcome to my personal portfolio repository! I am a passionate **Full-Stack Developer** and final-year B.Tech Computer Science student specializing in building real-world applications using modern technologies.
 
+## 🔗 Live Demo
+Check out my live portfolio here: **[https://vinaynuthana.github.io/Personal-portfolio/]**
+
+---
+
 ## 🛠️ Technical Stack
 
 - **Languages:** Java, Python, JavaScript, SQL, C/C++
